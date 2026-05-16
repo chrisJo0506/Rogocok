@@ -1,79 +1,17 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-     body {
-        margin: 0;
-      }
-
-      .utama {
-        height: 120dvh;
-        width: 100dvw;
-        background-color: cornsilk;
-        flex-direction: column;
-      }
-      nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-      }
-      .logo {
-        padding: 30px;
-      }
-      .pos1 {
-        flex: 1;
-        background-color: rgb(150, 124, 95);
-        display: flex;
-        flex-direction: row;
-      }
-
-      
-</style>
-<body>
-    <main class="utama">
-        <header>
-          <nav>
-            <img class="logo" src="image/Rogocok.png" width="100px" alt="gambar logo"/>
-            <a href="">About</a>
-            <a href="">Menu</a>
-            <a href="">Store</a>
-          </nav>
-        </header>
-        <main>
-            <section class="pos1">
-              <section class="judul">
-                <h1>ROTI GORENG COKLAT</h1>
-                <p>
-                    Nikmati sensasi manis dan renyahnya Roti Goreng Coklat “Rogocok” yang bikin ketagihan! Roti goreng hangat, lembut di dalam, dan lapisan coklat meleleh yang sempurna di setiap gigitannya, siap memanjakan lidah Anda kapan saja. Cocok sebagai camilan sore, teman ngeteh, atau cemilan santai bersama keluarga dan teman. Jangan sampai ketinggalan—cicipi Rogocok, kelezatan yang membuat hati dan perut bahagia!
-                </p>
-                <br />
-                <br /><br />
-               
-                <label class="harga">Rp. 10.000</label>
-                <br /><br />
-                <button>ORDER SEKARANG</button>
-              </section>
-
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rogocok</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
- 
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-  <title>Rogocok</title>
-
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -82,14 +20,19 @@
     }
 
     body{
-      overflow-x:hidden;
       background:#fff7f0;
+      overflow-x:hidden;
     }
 
-  
+    /* NAVBAR */
+
     header{
+      width:100%;
       background:#9b6712;
-      padding:10px 40px;
+      padding:15px 50px;
+      position:sticky;
+      top:0;
+      z-index:100;
     }
 
     nav{
@@ -101,68 +44,59 @@
     .kiri{
       display:flex;
       align-items:center;
-      gap:25px;
+      gap:30px;
     }
 
     .logo{
-      width:120px;
-      height:auto;
+      width:90px;
     }
 
     .menu{
       display:flex;
       gap:25px;
-      align-items:center;
     }
 
     .menu a{
       text-decoration:none;
-      color:black;
-      font-size:18px;
+      color:white;
       font-weight:bold;
       transition:0.3s;
     }
 
     .menu a:hover{
-      color:white;
+      color:#ffd28f;
     }
 
-    
     .brand{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      font-size:42px;
-      font-family: 'Pacifico', cursive;
+      font-family:'Pacifico', cursive;
       color:white;
-      letter-spacing:2px;
+      font-size:40px;
     }
 
-   
     .btn-nav{
       background:black;
       color:white;
-      padding:15px 28px;
       border:none;
-      border-radius:40px;
-      font-size:16px;
-      font-weight:bold;
+      padding:14px 28px;
+      border-radius:30px;
       cursor:pointer;
+      font-weight:bold;
       transition:0.3s;
     }
 
     .btn-nav:hover{
-      background:#333;
+      background:#3d2516;
     }
+
+    /* HERO */
 
     .pos1{
       min-height:100vh;
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      padding:60px;
-      background:#fff7f0;
-      gap:50px;
+      justify-content:space-between;
+      gap:60px;
+      padding:70px;
     }
 
     .judul{
@@ -170,16 +104,16 @@
     }
 
     .judul h1{
-      font-size:70px;
+      font-size:65px;
+      color:#4e2f1f;
       line-height:1.1;
       margin-bottom:25px;
-      color:#4e2f1f;
     }
 
     .judul p{
       font-size:18px;
       line-height:1.8;
-      color:#444;
+      color:#555;
       margin-bottom:30px;
     }
 
@@ -191,7 +125,7 @@
 
     .judul button{
       margin-top:30px;
-      background:black;
+      background:#000;
       color:white;
       border:none;
       padding:18px 35px;
@@ -204,9 +138,11 @@
 
     .judul button:hover{
       background:#5a3825;
+      transform:scale(1.05);
     }
 
-    
+    /* GAMBAR */
+
     .gambar{
       flex:1;
       display:flex;
@@ -216,22 +152,17 @@
     .gambar img{
       width:100%;
       max-width:500px;
-      border-radius:30px;
+      border-radius:25px;
       box-shadow:0 10px 30px rgba(0,0,0,0.2);
     }
 
-   
+    /* RESPONSIVE */
+
     @media(max-width:900px){
 
       nav{
         flex-direction:column;
         gap:20px;
-        position:relative;
-      }
-
-      .brand{
-        position:static;
-        transform:none;
       }
 
       .kiri{
@@ -239,7 +170,8 @@
       }
 
       .menu{
-        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
       .pos1{
@@ -255,6 +187,10 @@
       .gambar img{
         max-width:350px;
       }
+
+      .brand{
+        font-size:32px;
+      }
     }
 
   </style>
@@ -262,11 +198,10 @@
 
 <body>
 
-  
   <header>
+
     <nav>
 
-   
       <div class="kiri">
 
         <img class="logo" src="image/Rogocok.png" alt="Logo">
@@ -279,15 +214,14 @@
 
       </div>
 
-      
       <h1 class="brand">Rogocok</h1>
 
-     
       <button class="btn-nav">
         ORDER NOW
       </button>
 
     </nav>
+
   </header>
 
   <section class="pos1">
@@ -300,9 +234,11 @@
         Nikmati sensasi manis dan renyahnya Roti Goreng Coklat “Rogocok”
         yang bikin ketagihan! Roti goreng hangat, lembut di dalam,
         dan lapisan coklat meleleh yang sempurna di setiap gigitannya.
+        Cocok sebagai teman santai bersama keluarga dan teman.
       </p>
 
       <label class="harga">Rp. 10.000</label>
+
       <br>
 
       <button>CHECK SEKARANG</button>
@@ -314,5 +250,6 @@
     </section>
 
   </section>
+
 </body>
 </html>
