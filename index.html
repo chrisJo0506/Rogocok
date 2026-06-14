@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+
+.header{
+    width:100%;
+    height:100px;
+    background:#804d2b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    border-bottom:1px solid #533c31;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+}
+
+.navbar{
+    display:flex;
+    gap:50px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#333;
+    font-size:22px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:#8B5A2B;
+}
+
+.hero-slider{
+    width:100%;
+    height:576px;
+    overflow:hidden;
+    margin-top:100px;
+}
+
+.slides{
+    display:flex;
+    animation:slider 15s infinite;
+}
+
+.slide{
+    min-width:100%;
+}
+
+.slide img{
+    width:100%;
+    height:576px;
+    object-fit:cover;
+    display:block;
+}
+
+@keyframes slider {
+
+    0%,20%{
+        transform: translateX(0);
+    }
+
+    25%,40%{
+        transform: translateX(-100%);
+    }
+
+    45%,60%{
+        transform: translateX(-200%);
+    }
+
+    65%,80%{
+        transform: translateX(-300%);
+    }
+
+    85%,100%{
+        transform: translateX(-400%);
+    }
+}
+
+.bawah{
+    width:100%;
+    min-height:400px;
+    background:#f8f3ed;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.bawah h1{
+    font-size:70px;
+    font-weight:900;
+    color:#573207;
+    margin-bottom:20px;
+}
+
+.bawah p{
+    font-size:24px;
+    color:#555;
+    margin-bottom:40px;
+}
+
+.order-btn-bawah{
+    text-decoration:none;
+    background:#ff0000;
+    color:white;
+    padding:18px 50px;
+    border-radius:50px;
+    font-size:22px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.order-btn-bawah:hover{
+    background:#7a4508;
+    transform:translateY(-3px);
+}
+
+.footer{
+    background:#573207;
+    color:white;
+    padding:80px 10% 30px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:50px;
+}
+
+.footer-about{
+    flex:1;
+    min-width:300px;
+}
+
+.footer-about h2{
+    font-size:60px;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.footer-about p{
+    font-size:22px;
+    line-height:1.8;
+    max-width:450px;
+}
+
+.footer-menu{
+    flex:1;
+    min-width:200px;
+}
+
+.footer-menu h3,
+.footer-contact h3{
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+.footer-menu a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:18px;
+    font-size:20px;
+    transition:0.3s;
+}
+
+.footer-menu a:hover{
+    color:#d6b07b;
+    padding-left:8px;
+}
+
+.footer-contact{
+    flex:1.5;
+    min-width:300px;
+}
+
+.footer-contact p{
+    margin-bottom:20px;
+    font-size:20px;
+    line-height:1.8;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:80px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    font-size:18px;
+}
+/* PROMO POPUP */
+
+.promo-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.promo-box{
+    width:380px;
+    background:white;
+    border-radius:20px;
+    text-align:center;
+    padding:40px 30px;
+    position:relative;
+    animation:popup .4s ease;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.promo-close{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.promo-box h2{
+    color:#573207;
+    margin-bottom:10px;
+}
+
+.promo-discount{
+    font-size:50px;
+    font-weight:bold;
+    color:#804d2b;
+    margin:15px 0;
+}
+
+.promo-code{
+    border:2px dashed #804d2b;
+    padding:15px;
+    border-radius:10px;
+    margin:20px 0;
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.promo-box button{
+    background:#573207;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:18px;
+    margin-bottom:15px;
+}
+
+.promo-box button:hover{
+    background:#804d2b;
+}
+
+.whatsapp-float{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.whatsapp-float img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+}
+</style>
+<body>
+    <header class="header">
+
+    <div class="logo">
+        <img src="image/Rogocok.png" alt="Rogocok">
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+        <a href="contact us.html">Contact Us</a>
+    </nav>
+
+</header>
+
+  <section class="hero-slider">
+
+    <div class="slides">
+
+        <div class="slide">
+            <img src="image/banner1.png" alt="Banner 1">
+        </div>
+
+        <div class="slide">
+            <img src="image/banner2.png" alt="Banner 2">
+        </div>
+
+        <div class="slide">
+            <img src="image/banner3.png" alt="Banner 3">
+        </div>
+
+        <div class="slide">
+            <img src="image/banner4.png" alt="Banner 4">
+        </div>
+
+        <div class="slide">
+            <img src="image/banner5.png" alt="Banner 5">
+        </div>
+
+    </div>
+
+    <a href="https://web.whatsapp.com/" class="whatsapp-float" target="_blank">
+    <img src="image/images-removebg-preview.png" alt="WhatsApp">
+</a>
+
+<script src="script.js"></script>
+</section>
+
+<section class="bawah">
+    <h1>Siap Mencoba yang Baru?</h1>
+    <p>Order disini sebelum terlewat &lt;3</p>
+    <a href="order sekarang.html" class="order-btn-bawah">Order Sekarang</a>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h2>Rogocok</h2>
+            <p>
+                Menghadirkan kreasi cokelat premium
+                dengan cita rasa yang menggoda.
+            </p>
+        </div>
+
+        <div class="footer-menu">
+            <h3>HALAMAN</h3>
+
+             <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="contact us.html">Contact Us</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>KONTAK KAMI</h3>
+
+            <p>📍 Jl. Adi Sucipto No.235, Bangka Belitung Laut, Kec. Pontianak Tenggara, Kota Pontianak, Kalimantan Barat 78111</p>
+            <p>📞 +62 812 4321 7890</p>
+            <p>✉ info@rogocok.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © Copyright 2026. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<div class="promo-overlay" id="promoOverlay">
+    <div class="promo-box">
+        <span class="promo-close" onclick="closePromo()">×</span>
+        <h2>🎉 PROMO SPESIAL</h2>
+        <p>Dapatkan diskon hingga</p>
+        <div class="promo-discount">
+            25% OFF
+        </div>
+
+        <div class="promo-code">
+            CATH2006
+        </div>
+
+        <button onclick="#">
+            Klaim Voucher
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+// waktu tampil voucher
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById("promoOverlay").style.display = "flex";
+    }, 3000);
+};
+
+// x kan voucher
+function closePromo() {
+    document.getElementById("promoOverlay").style.display = "none";
+}
+</script>
+</body>
+</html>
